@@ -18,7 +18,10 @@ export default {
   color: #6AA771
   padding: 5px 10px
   margin-right: 10px
+  margin-bottom: 5px
   border-radius: 5px
   &-list
     display: flex
+    flex-wrap: wrap
+
 </style>

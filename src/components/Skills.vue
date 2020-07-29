@@ -34,7 +34,7 @@ export default {
   width: 80%
   padding: 0 0 0 10%
 
-$line-height: 1.3em
+$line-height: 1.2em
 $before-pad: -($line-height + 0.6em)
 
 .skills
@@ -55,4 +55,7 @@ $before-pad: -($line-height + 0.6em)
       left: $before-pad
       transform: translateY(-50%) 
       
+@media screen and (max-width: 680px)
+  $line-height: 1.1em
+
 </style>

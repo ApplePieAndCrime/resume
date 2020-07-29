@@ -88,4 +88,9 @@ mark
   width: 30%
   margin: 40px auto
 
+@media screen and (max-width: 768px)
+  .link
+    display: flex
+    flex-direction: column
+
 </style>

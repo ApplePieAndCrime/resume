@@ -44,4 +44,8 @@ body
 #app
   scroll-behavior: smooth
 
+@media screen and (max-width: 560px)
+  body
+    padding-top: 0
+
 </style>

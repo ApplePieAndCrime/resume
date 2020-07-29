@@ -3,7 +3,7 @@
     Section(title="Обо мне")
     .content
       .photo
-        img(src="~@/assets/my-photo.jpg")
+        img.photo-img(src="~@/assets/my-photo.jpg")
       .text-content
         h3 Ирина, 21
         p {{about}}
@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      about: "Верстаю на препроцессорах html(pug) и css(sass) с gulp'ом."
+      about: "Верстаю на препроцессорах html (pug) и css (sass) с gulp'ом."
         + '\r\nЕсть опыт разработки баз данных на MS SQL и MySQL.'
         + '\r\nЕсть базовые навыки работы с git.'
         + '\r\nДля удобства делаю макеты в Figma или для PSD использую Avocode.'
@@ -32,16 +32,23 @@ export default {
 
 .content
   display: flex
+  justify-content: space-around
 
 $photo-size: 200px
 .photo
-  min-width: 30%
+  max-width: 28%
   margin-right: 20px
-  img
-    width: 150px
-    height: 150px
+  display: flex
+  align-items: center
+
+  &-img
+    width: 100%
     border-radius: 50%
-    background-size: contain
+
+.text-content
+  display: flex
+  flex-direction: column
+  padding-top: 15px
 
 h3
   margin: 10px 0
@@ -51,14 +58,26 @@ h3
   font-weight: 500
 
 p
-  font-size: 1em
-
-.text-content
-
   white-space: pre-wrap
+  line-height: 1.5em
 
-@media screen and (max-width: 480px)
+@media screen and (max-width: 1200px)
+  .text-content
+    padding-top: 0
   .photo
-    width: 100%
+    min-width: 35%
+
+@media screen and (max-width: 900px)
+  .text-content
+    padding-top: 0
+    h3
+      text-align: center
+    p
+      font-size: 1em
+  .content
+    flex-direction: column
+  .photo
+    min-width: 50%
+    margin: auto
 
 </style>

@@ -20,7 +20,7 @@ export default {
 section
   background-color: #FFFFFF
   margin: 35px 15%
-  padding: 30px 20px
+  padding: 20px 30px 40px
   text-align: center
 
 p
@@ -46,9 +46,13 @@ p
     background-color: #E1E4E8
     height: 2px
 
+@media screen and (max-width: 768px)
+  section
+    margin: 35px 10%
+
 @media screen and (max-width: 480px)
   section
-    margin: 35px 10px
+    margin: 25px 15px
     padding: 30px 20px
 
 </style>

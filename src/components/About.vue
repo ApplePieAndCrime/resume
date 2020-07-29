@@ -3,10 +3,10 @@
     Section(title="Обо мне")
     .content
       .photo
-        img(src="~@/assets/photo.jpeg")
+        img(src="~@/assets/my-photo.jpg")
       .text-content
         h3 Ирина, 21
-        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, quia. Mollitia tenetur neque ab nisi perspiciatis, placeat saepe. Incidunt beatae nisi maiores ratione voluptatum distinctio ipsam expedita cupiditate animi, est rerum ipsum. Iste pariatur necessitatibus fugit facilis nam. Repellendus, quia error. Magni harum fugit, quae iste veritatis accusamus porro officia, molestiae nulla ipsum voluptate aliquam incidunt totam eaque illum odit?
+        p {{about}}
 </template>
 
 <script>
@@ -16,6 +16,14 @@ export default {
   name: 'About',
   components: {
     Section
+  },
+  data() {
+    return {
+      about: "Верстаю на препроцессорах html(pug) и css(sass) с gulp'ом."
+        + '\r\nЕсть опыт разработки баз данных на MS SQL и MySQL.'
+        + '\r\nЕсть базовые навыки работы с git.'
+        + '\r\nДля удобства делаю макеты в Figma или для PSD использую Avocode.'
+    }
   }
 }
 </script>
@@ -30,9 +38,10 @@ $photo-size: 200px
   min-width: 30%
   margin-right: 20px
   img
-    width: 100%
-    height: auto
+    width: 150px
+    height: 150px
     border-radius: 50%
+    background-size: contain
 
 h3
   margin: 10px 0
@@ -40,6 +49,13 @@ h3
   font-size: 1.7em
   color: #AAAA8E
   font-weight: 500
+
+p
+  font-size: 1em
+
+.text-content
+
+  white-space: pre-wrap
 
 @media screen and (max-width: 480px)
   .photo

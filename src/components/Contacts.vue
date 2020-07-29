@@ -2,8 +2,6 @@
   section#contacts
     Section(title="Контакты")
     .content
-      p Мой email: 
-        a(:href="'mailto:' + email + '?subject=Отклик по резюме'") {{email}}
       p Мой github-аккаунт: 
         a(:href="'//' + github") {{github}}
 </template>
@@ -18,7 +16,6 @@ export default {
   },
   data() {
     return {
-      email: 'irina.anpodistova@gmail.com',
       github: 'github.com/ApplePieAndCrime'
     }
   }

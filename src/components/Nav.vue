@@ -8,7 +8,7 @@
     .nav
       ul.menu
         li.menu-item(v-for="item in menu") 
-          a(:href="item.link" @click="scrollToSection") {{ item.name }}
+          a(:href="item.link" @click.prevent="scrollToSection") {{ item.name }}
 
 </template>
 
@@ -29,21 +29,29 @@ export default {
     scrollToSection: (e) => {
       const sectionUrl = e.target.href.substring(e.target.href.indexOf('#'))
       const section = document.querySelector(sectionUrl)
-      const headerOffset = 59 + 20
+      let headerOffset = 59 + 20
       const sectionPos = section.getBoundingClientRect().top
 
-      e.preventDefault()
+      if(window.innerWidth <= 560) {
+        const input = document.querySelector('#toggle-menu')
+        input.checked = false
+        headerOffset = 22
+        
+        const event = new CustomEvent('change')
+        input.dispatchEvent(event)
+      }
 
       window.scrollTo({
         top: sectionPos + pageYOffset - headerOffset,
         behavior: "smooth"
       })
+
     },
     toggleMenu: (e) => {
         const nav = document.querySelector('.nav')
         const input = e.target
 
-        nav.style.cssText = `transform: ${input.checked ? 'none' : 'translate(0, -100%)'}`
+        nav.classList.toggle('nav-show')
       }
   }
 }
@@ -86,6 +94,8 @@ a
   .nav
     transform: translate(0, -100%)
     transition: transform 0.5s ease
+  .nav-show
+    transform: none
     
   .menu-icon
     position: fixed

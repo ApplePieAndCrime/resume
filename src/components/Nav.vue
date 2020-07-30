@@ -108,14 +108,15 @@ a
 
       &:checked 
         & ~ span
-          opacity: 1
-          transform: rotate(45deg) translate(-2px, -1px)
+          margin: 0
           background-color: #fff
-          &:nth-last-child(3)
+          &:nth-child(2)
+            transform: rotate(45deg) translate(0px, 0px)
+          &:nth-child(3)
             opacity: 0
             transform: rotate(0deg) scale(0.2, 0.2)
-          &:nth-last-child(2)
-            transform: rotate(-45deg) translate(0, -1px)
+          &:nth-child(4)
+            transform: rotate(-45deg) translate(-10px, 10px)
 
     span
       display: block
@@ -127,10 +128,10 @@ a
       border-radius: 3px
       z-index: 1
       transform-origin: 4px 0px
-      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease
-      &:first-child
+      transition: transform .5s cubic-bezier(0.77,0.2,0.05,1.0), background .5s cubic-bezier(0.77,0.2,0.05,1.0), opacity .55s ease, margin .5s cubic-bezier(0.77,0.2,0.05,1.0)
+      &:nth-child(2)
         transform-origin: 0% 0%
-      &:nth-last-child(2)
+      &:nth-child(4)
         transform-origin: 0% 100%
 
   .menu

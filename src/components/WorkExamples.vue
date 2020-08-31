@@ -13,6 +13,7 @@ const username = 'applepieandcrime'
 const repo_url = `github.com/${username}/`
 const site_url = `${username}.github.io/`
 const dynamic_url = '.applepie.darkhost.pro'
+const codepen = `codepen.io/${username}/`
 
 export default {
   name: 'WorkExamples',
@@ -38,6 +39,14 @@ export default {
           tags: ['PUG','SASS','JS','GULP'],
           link_site: site_url + 'boots/dist',
           link_repo: repo_url + 'boots'
+        },
+        {
+          title: 'bootstrap-profile-vue',
+          logo: '',
+          description: "Макет с bootstrap сеткой и шаблонами. Сохранение через localStorage и работа с формой через v-model. toastr alert'ы.",
+          tags: ['VueJS','Bootstrap','jQuery'],
+          link_site: codepen + 'full/dyMWbEw',
+          link_repo: codepen + 'pen/dyMWbEw'
         },
         {
           title: 'Текстовая РПГ',

@@ -4,6 +4,8 @@
     .content
       p Мой github-аккаунт: 
         a(:href="'//' + github") {{github}}
+      p CodePen: 
+        a(:href="'//' + codepen") {{codepen}}
 </template>
 
 <script>
@@ -16,7 +18,8 @@ export default {
   },
   data() {
     return {
-      github: 'github.com/ApplePieAndCrime'
+      github: 'github.com/ApplePieAndCrime',
+      codepen: 'codepen.io/applepieandcrime'
     }
   }
 }

@@ -5,7 +5,7 @@
       .photo
         img.photo-img(src="~@/assets/my-photo.jpg")
       .text-content
-        h3 Ирина, 21
+        h3 Ирина, {{year}}
         p {{about}}
 </template>
 
@@ -19,7 +19,8 @@ export default {
   },
   data() {
     return {
-      about: "Верстаю на препроцессорах html (pug) и css (sass) с gulp'ом."
+      year: Math.floor((new Date() - new Date(1999,5,8)) / 31536000000),
+      about: "Верстаю на препроцессорах html (pug) и css (sass) с gulp'ом или VueJS."
         + '\r\nЕсть опыт разработки баз данных на MS SQL и MySQL.'
         + '\r\nЕсть базовые навыки работы с git.'
         + '\r\nДля удобства делаю макеты в Figma или для PSD использую Avocode.'
